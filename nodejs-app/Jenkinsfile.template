@@ -13,21 +13,14 @@ pipeline {
 	        }
 	      }
 	    }
-stage('Deploy') {
-      when {
-        beforeAgent true
-        branch 'master'
-      }
-      input {
-        message "Should we continue?"
-      }
-      steps {
-        echo "Continuing with deployment"
-      }
-    }
-      steps {
-        echo "Continuing with deployment"
-      }
-    }
+	  stage('Build and Push Image') {
+	      when {
+	         beforeAgent true
+	         branch 'master'
+	      }
+	      steps {
+	         echo "TODO - build and push image"
+	      }
+	    }
 	  }
 	}
